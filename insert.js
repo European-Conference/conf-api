@@ -47,7 +47,7 @@ fs.readFile(csvFilePath, (err, fileData) => {
             for (const row of rows) {
                 const { name, type, phone_number, email, source } = row;
 
-                const existingTicket = await client.query('SELECT ref FROM attendees WHERE email = $1 OR original_email = $2', [email, row.original_email || '']);
+                const existingTicket = await client.query('SELECT ref FROM attendees WHERE email = $1 OR original_email = $2', [email, email]);
                 if (existingTicket.rows.length > 0) {
                     console.log(`Ticket for ${name} (${email}) already exists with ref ${existingTicket.rows[0].ref}. Skipping.`);
                     ticketsSkipped++;

@@ -2,3 +2,5 @@ config.json
 node_modules/
 config-writer.json
 data/
+ticket-output
+tickets-skipped
