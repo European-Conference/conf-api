@@ -4,3 +4,4 @@ config-writer.json
 data/
 ticket-output
 tickets-skipped
+panel-counts.txt
